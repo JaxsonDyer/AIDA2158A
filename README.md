@@ -170,11 +170,11 @@ Full-size images with YOLO-detected peduncles (green overlay), perpendicular cut
 
 | Example 1 | Example 2 |
 |:---:|:---:|
-| ![Cut Line 1](docs/cut_lines/0_jpg.rf.8K2ICJ1NdeeRJBrUhTP9.jpg) | ![Cut Line 2](docs/cut_lines/13_jpg.rf.6qWI6XneZ0ZIRIJc3tf6.jpg) |
+| ![Cut Line 1](docs/cut_lines/example1.png) | ![Cut Line 2](docs/cut_lines/example2.png) |
 
 | Example 3 | Example 4 |
 |:---:|:---:|
-| ![Cut Line 3](docs/cut_lines/106_jpg.rf.ZT1VuIOdwHztpKdBDEeY.jpg) | ![Cut Line 4](docs/cut_lines/3009_png.rf.QIQUjEfBsUpOegWMv1hu.png) |
+| ![Cut Line 3](docs/cut_lines/example3.png) | ![Cut Line 4](docs/cut_lines/3009_png.rf.QIQUjEfBsUpOegWMv1hu.png) |
 
 #### Cut Angle Distribution
 Histogram of cut line angles across all 294 processed images (410 total cut lines). The distribution is centered around ±80–90° (near-horizontal), consistent with peduncles that typically grow upward from the fruit.
