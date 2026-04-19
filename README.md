@@ -93,6 +93,96 @@ This module operates directly on the **original full-size images** (not the ROI 
 
 ---
 
+## Results & Visualizations
+
+### Module 1 — YOLOv11-seg Detection
+
+#### Training Curves
+Loss and metric curves across 10 epochs of training. Shows convergence of segmentation loss, box loss, mAP@0.5, and precision.
+
+![YOLO Training Curves](docs/yolo/training_curves.png)
+
+#### Confusion Matrix
+Per-class prediction accuracy on the validation set. Rows = ground truth, columns = predictions.
+
+| Raw Counts | Normalized |
+|:---:|:---:|
+| ![Confusion Matrix](docs/yolo/confusion_matrix.png) | ![Confusion Matrix Normalized](docs/yolo/confusion_matrix_normalized.png) |
+
+#### Validation Predictions
+Side-by-side comparison of ground truth labels (left) vs. model predictions (right) on a validation batch.
+
+| Ground Truth Labels | Model Predictions |
+|:---:|:---:|
+| ![Val Labels](docs/yolo/val_batch0_labels.jpg) | ![Val Predictions](docs/yolo/val_batch0_pred.jpg) |
+
+#### Label Distribution
+Distribution of annotated bounding boxes and segmentation polygons across the training set.
+
+![Label Distribution](docs/yolo/labels.jpg)
+
+#### Precision-Recall Curves
+Box and mask PR/F1 curves showing detection and segmentation quality at various confidence thresholds.
+
+| Box PR Curve | Mask PR Curve |
+|:---:|:---:|
+| ![Box PR](docs/yolo/BoxPR_curve.png) | ![Mask PR](docs/yolo/MaskPR_curve.png) |
+
+| Mask F1 Curve |
+|:---:|
+| ![Mask F1](docs/yolo/MaskF1_curve.png) |
+
+#### YOLO Results Summary
+Combined metrics dashboard exported by Ultralytics after training.
+
+![YOLO Results](docs/yolo/results.png)
+
+---
+
+### Module 1b — ROI Crops & Auto-Masks
+
+Automatically zoomed-in crops around the ripest strawberry with binary peduncle masks extracted from YOLO labels — no manual annotation needed.
+
+| ROI Crop | Auto-Extracted Peduncle Mask |
+|:---:|:---:|
+| ![ROI Crop](docs/roi/crop_sample.jpg) | ![Peduncle Mask](docs/roi/mask_sample.jpg) |
+| ![ROI Crop 2](docs/roi/crop_sample2.jpg) | ![Peduncle Mask 2](docs/roi/mask_sample2.jpg) |
+
+---
+
+### Module 3 — U-Net Peduncle Segmentation
+
+#### Training Curves
+BCE + Dice loss and validation IoU over 50 epochs. The best model is selected by peak validation IoU.
+
+![U-Net Training Curves](docs/unet/unet_training_curves.png)
+
+#### Sample Predictions
+Top row: input ROI crop. Middle row: ground truth mask. Bottom row: U-Net prediction. The model learns to isolate thin peduncle structures from background clutter.
+
+![U-Net Sample Predictions](docs/unet/unet_sample_predictions.png)
+
+---
+
+### Module 4 — Peduncle Cut Line Extraction
+
+Full-size images with YOLO-detected peduncles (green overlay), perpendicular cut lines (red), and cut-point markers (yellow circles). Each ripe strawberry gets a cut line on its associated peduncle.
+
+| Example 1 | Example 2 |
+|:---:|:---:|
+| ![Cut Line 1](docs/cut_lines/0_jpg.rf.8K2ICJ1NdeeRJBrUhTP9.jpg) | ![Cut Line 2](docs/cut_lines/13_jpg.rf.6qWI6XneZ0ZIRIJc3tf6.jpg) |
+
+| Example 3 | Example 4 |
+|:---:|:---:|
+| ![Cut Line 3](docs/cut_lines/106_jpg.rf.ZT1VuIOdwHztpKdBDEeY.jpg) | ![Cut Line 4](docs/cut_lines/3009_png.rf.QIQUjEfBsUpOegWMv1hu.png) |
+
+#### Cut Angle Distribution
+Histogram of cut line angles across all 294 processed images (410 total cut lines). The distribution is centered around ±80–90° (near-horizontal), consistent with peduncles that typically grow upward from the fruit.
+
+![Cut Angle Histogram](docs/cut_lines/cut_angle_histogram.png)
+
+---
+
 ## Project Structure
 
 ```
