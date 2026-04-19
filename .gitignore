@@ -1,0 +1,26 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# OS files
+.DS_Store
+
+# Large model weights
+*.pt
+*.pth
+
+# Dataset images (too large for git)
+dataset/
+strawberry_db/
+roi_crops/
+roi_masks/
+
+# Run outputs (images, curves — regeneratable)
+runs/
