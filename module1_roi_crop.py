@@ -26,7 +26,7 @@ ROOT      = Path(__file__).parent
 DATASET   = ROOT / "dataset"
 ROI_DIR   = ROOT / "roi_crops"
 MASK_DIR  = ROOT / "roi_masks"
-BEST_PT   = ROOT / "runs" / "segment" / "yolo11s_strawberry" / "weights" / "best.pt"
+BEST_PT   = ROOT / "yolo_best.pt"
 
 # Padding applied around the strawberry mask bounding box (fraction of bbox size)
 PAD_FRAC  = 0.25

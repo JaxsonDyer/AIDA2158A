@@ -16,6 +16,9 @@ wheels/
 *.pt
 *.pth
 
+# Large zip files
+*.zip
+
 # Dataset images (too large for git)
 dataset/
 strawberry_db/

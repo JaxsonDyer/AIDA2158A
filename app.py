@@ -15,7 +15,7 @@ import streamlit as st
 from PIL import Image
 
 ROOT = Path(__file__).parent
-BEST_PT = ROOT / "runs" / "segment" / "yolo11s_strawberry" / "weights" / "best.pt"
+BEST_PT = ROOT / "yolo_best.pt"
 
 
 # ─────────────────────────────────────────────────────────────────────────────

@@ -25,7 +25,7 @@ from tqdm import tqdm
 
 ROOT       = Path(__file__).parent
 DATASET    = ROOT / "dataset"
-BEST_PT    = ROOT / "runs" / "segment" / "yolo11s_strawberry" / "weights" / "best.pt"
+BEST_PT    = ROOT / "yolo_best.pt"
 OUT_DIR    = ROOT / "runs" / "cut_lines"
 
 
